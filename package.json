@@ -1,0 +1,29 @@
+{
+  "name": "react-email-starter",
+  "version": "1.1.0",
+  "private": true,
+  "scripts": {
+    "build": "email export",
+    "dev": "email dev",
+    "export": "email export",
+    "format": "prettier --write ./emails/**/*"
+  },
+  "dependencies": {
+    "@react-email/components": "1.0.12",
+    "html-react-parser": "^6.1.0",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "tailwindcss": "^4.2.4"
+  },
+  "devDependencies": {
+    "@react-email/preview-server": "5.2.10",
+    "@react-email/ui": "6.0.8",
+    "@tailwindcss/postcss": "^4.2.4",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "postcss": "^8.5.14",
+    "prettier": "^3.8.3",
+    "prettier-plugin-tailwindcss": "^0.8.0",
+    "react-email": "6.0.8"
+  }
+}
