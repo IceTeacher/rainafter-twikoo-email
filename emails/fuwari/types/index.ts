@@ -1,31 +1,26 @@
-export interface RainafterNotificationEmailProps {
+export interface NotificationEmailProps {
   siteUrl?: string; // ${SITE_URL}
   siteName?: string; // ${SITE_NAME}
   parentNick?: string; // ${PARENT_NICK}
-  parentComment?: string; // ${PARENT_COMMENT}, trusted HTML snippet or plain text
+  parentComment?: string; // ${PARENT_COMMENT}
   nick?: string; // ${NICK}
-  comment?: string; // ${COMMENT}, trusted HTML snippet or plain text
+  comment?: string; // ${COMMENT}
   postUrl?: string; // ${POST_URL}
   img?: string; // ${IMG}
   parentImg?: string; // ${PARENT_IMG}
   mail?: string; // ${MAIL}
-  ip?: string; // ${IP}
-  bannerImage?: string; // optional site banner image
+  bannerImage?: string; // 可选的头部图片 URL
 }
 
 export interface AvatarBadgeProps {
   src?: string;
   name: string;
-  backgroundColor: string;
-  textColor: string;
 }
 
 export interface CommentCardProps {
   avatarSrc?: string;
   nick: string;
   label: string;
-  content: string; // trusted HTML snippet or placeholder string
+  content: string;
   backgroundColor: string;
-  avatarBackgroundColor: string;
-  avatarTextColor: string;
 }

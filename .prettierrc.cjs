@@ -10,6 +10,4 @@ module.exports = {
       files: '*.ts,*.tsx',
     },
   ],
-  'format:check': 'prettier --check ./src',
-  'format:write': 'prettier --write ./src',
 };
