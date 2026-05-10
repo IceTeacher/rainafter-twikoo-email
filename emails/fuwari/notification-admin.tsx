@@ -1,5 +1,4 @@
 import { Body, Button, Container, Head, Html, Img, Link, Preview, Section, Tailwind, Text } from 'react-email';
-import { CollageFonts } from '@/fuwari/components/CollageFonts';
 import { CommentCard } from '@/fuwari/components/CommentCard';
 import { Footer } from '@/fuwari/components/Footer';
 import type { NotificationEmailProps } from '@/fuwari/types';
@@ -22,9 +21,8 @@ export const NotificationAdminEmail = ({
 
   return (
     <Tailwind config={collageTailwindConfig}>
-      <Html>
+      <Html lang="zh-cn">
         <Head>
-          <CollageFonts />
           <style>{commentRichContentCss}</style>
         </Head>
 

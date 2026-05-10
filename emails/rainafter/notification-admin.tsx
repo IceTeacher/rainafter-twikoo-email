@@ -20,8 +20,11 @@ export const NotificationAdminEmail = ({
 
   return (
     <Tailwind config={collageTailwindConfig}>
-      <Html>
+      <Html lang="zh-cn">
         <Head>
+          <style>
+            @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap');
+          </style>
           <style>{commentRichContentCss}</style>
         </Head>
 

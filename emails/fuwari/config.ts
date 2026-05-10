@@ -58,8 +58,8 @@ export const notificationEmailPreviewProps = {
   nick: '阿雨',
   comment: '谢谢您的留言，我补充了一个更直接的排查方法。\n您可以点开文章末尾的更新说明，再对照一下现在的配置。',
   postUrl: 'https://rainafter.example.com/posts/reply-notification',
-  img: 'https://i.pravatar.cc/120?img=14',
-  parentImg: 'https://i.pravatar.cc/120?img=32',
+  img: 'https://weavatar.com/avatar/79fa08da7bcb57cd5bf5f3f7c423926f5e686f5d72f76107314506202382c63e?s=256',
+  parentImg: 'https://weavatar.com/avatar/0010c1a19fe3135e77a9065bf4609f8219e0f5bff051999e1b31bcf90a0a2024?s=256',
   bannerImage: defaultBannerImage,
 } satisfies NotificationEmailProps;
 
@@ -70,7 +70,7 @@ export const notificationAdminEmailPreviewProps = {
   nick: '阿雨',
   comment: '这篇文章的排版和插图都很好，尤其是最后一段关于配置回退逻辑的说明，对我排查问题很有帮助。',
   postUrl: 'https://rainafter.example.com/posts/admin-notification',
-  img: 'https://i.pravatar.cc/120?img=14',
+  img: 'https://weavatar.com/avatar/79fa08da7bcb57cd5bf5f3f7c423926f5e686f5d72f76107314506202382c63e?s=256',
   bannerImage: defaultBannerImage,
 } satisfies NotificationEmailProps;
 
