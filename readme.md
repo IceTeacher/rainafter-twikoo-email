@@ -16,33 +16,28 @@
 ## 模板预览
 
 ### Rainafter 主题
-
-<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start;">
-  <div align="center">
-    <img src="docs/picture/rainafter-notification.webp" alt="rainafter 普通评论回复通知" style="width: 100%; height: 420px; object-fit: contain;" />
-    <strong>普通评论回复通知 <code>notification</code></strong><br />
-  </div>
-  <div align="center">
-    <img src="docs/picture/rainafter-notification-admin.webp" alt="rainafter 管理员新评论通知" style="width: 100%; height: 420px; object-fit: contain;" />
-    <strong>管理员新评论通知 <code>notification-admin</code></strong><br />
-  </div>
-</div>
-
 Rainafter 主题以清新简约的设计风格为主，配色柔和。
+
+普通评论回复通知模板
+
+![Rainafter 普通评论回复通知模板](docs/picture/rainafter-notification.webp)
+
+管理员新评论通知模板
+
+![Rainafter 管理员新评论通知模板](docs/picture/rainafter-notification-admin.webp)
+
+
 ### Fuwari 主题
-
-<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start;">
-  <div align="center">
-    <img src="docs/picture/fuwari-notification.webp" alt="fuwari 普通评论回复通知" style="width: 100%; height: 420px; object-fit: contain;" />
-    <strong>普通评论回复通知 <code>notification</code></strong><br />
-  </div>
-  <div align="center">
-    <img src="docs/picture/fuwari-notification-admin.webp" alt="fuwari 管理员新评论通知" style="width: 100%; height: 420px; object-fit: contain;" />
-    <strong>管理员新评论通知 <code>notification-admin</code></strong><br />
-  </div>
-</div>
-
 Fuwari 主题参考了知名 Astro 博客主题 [Fuwari](https://github.com/saicaca/fuwari) 的设计风格和配色方案。
+
+普通评论回复通知模板
+
+![Fuwari 普通评论回复通知模板](docs/picture/fuwari-notification.webp)
+
+管理员新评论通知模板
+
+![Fuwari 管理员新评论通知模板](docs/picture/fuwari-notification-admin.webp)
+
 
 ## 开始使用
 
