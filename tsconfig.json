@@ -9,10 +9,11 @@
     "strict": true,
     "noEmit": true,
     "strictNullChecks": true,
+    "allowImportingTsExtensions": true,
     "paths": {
       "@/*": ["./emails/*"]
     }
   },
-  "include": ["emails/**/*", "tsconfig.json", "global.d.ts"],
+  "include": ["emails/**/*", "test/**/*", "tsconfig.json", "emails/global.d.ts"],
   "exclude": ["node_modules", ".react-email"]
 }

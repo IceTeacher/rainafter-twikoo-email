@@ -6,11 +6,13 @@
     "build": "email export",
     "dev": "email dev",
     "export": "email export",
-    "format": "prettier --write ./emails/**/*"
+    "format": "prettier --write ./emails/**/*",
+    "test:email": "node --env-file=.env --test test/email.test.ts"
   },
   "dependencies": {
     "@react-email/components": "1.0.12",
     "html-react-parser": "^6.1.0",
+    "nodemailer": "^7.0.10",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "tailwindcss": "^4.2.4"
@@ -19,6 +21,8 @@
     "@react-email/preview-server": "5.2.10",
     "@react-email/ui": "6.0.8",
     "@tailwindcss/postcss": "^4.2.4",
+    "@types/node": "^24.10.1",
+    "@types/nodemailer": "^7.0.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "postcss": "^8.5.14",

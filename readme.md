@@ -67,6 +67,67 @@ pnpm build
 pnpm export
 ```
 
+## 邮件兼容性测试
+
+项目提供了基于真实 SMTP 发信的邮件兼容性测试，用于检查导出的 HTML 模板在不同邮箱客户端中的实际显示效果。该测试会真实发送邮件，请使用专门的测试邮箱和 SMTP 凭据。
+
+### 运行方式
+
+先复制示例配置并填写实际发信信息：
+
+```bash
+cp .env.example .env
+```
+
+然后运行测试：
+
+```bash
+pnpm test:email
+```
+
+`pnpm test:email` 会读取 `.env`，先执行 `pnpm build` 导出模板，再检查 `out/` 目录下的 4 个 HTML 产物是否存在，最后按“模板 × 收件人”的矩阵通过 SMTP 逐封发送测试邮件。
+
+### 测试覆盖范围
+
+当前测试矩阵覆盖以下模板：
+
+- `fuwari.notification`：Fuwari 主题的访客回复通知
+- `fuwari.notification-admin`：Fuwari 主题的管理员评论通知
+- `rainafter.notification`：Rainafter 主题的访客回复通知
+- `rainafter.notification-admin`：Rainafter 主题的管理员评论通知
+
+测试数据会在邮件内容中覆盖中文长文本、中英文混排、长链接、代码块、行内代码、远程图片、父评论和回复内容等场景，便于在 QQ 邮箱、Gmail 等真实邮箱客户端中检查排版兼容性。
+
+### 环境变量配置
+
+测试配置从 `.env` 读取，可参考 `.env.example`。
+
+必填配置：
+
+| 变量名 | 说明 |
+| --- | --- |
+| `EMAIL_TEST_RECIPIENTS` | 测试收件人列表，多个地址使用英文逗号分隔 |
+| `EMAIL_TEST_FROM` | 测试邮件发件人，例如 `Rainafter Mail Test <sender@example.com>` |
+| `SMTP_HOST` | SMTP 服务器地址 |
+| `SMTP_PORT` | SMTP 服务器端口 |
+| `SMTP_USER` | SMTP 登录用户名 |
+| `SMTP_PASS` | SMTP 登录密码或授权码 |
+
+可选配置：
+
+| 变量名 | 默认值 | 说明 |
+| --- | --- | --- |
+| `SMTP_SECURE` | `false` | 是否使用 SSL/TLS 直连，通常 465 端口设为 `true` |
+| `SMTP_REQUIRE_TLS` | `false` | 是否强制启用 STARTTLS，部分 SMTP 服务商需要开启 |
+| `EMAIL_TEST_SUBJECT_PREFIX` | `[email-compat]` | 测试邮件标题前缀，便于在收件箱中筛选 |
+| `EMAIL_TEST_SEND_DELAY_MS` | `1000` | 每封测试邮件之间的延时，单位毫秒 |
+
+注意事项：
+
+- `.env` 中会包含 SMTP 凭据，不应提交到仓库。
+- 如果配置多个收件人，测试会向每个收件人发送全部 4 个模板。
+- 如果遇到 SMTP 服务商限速或临时拒信，可以适当调大 `EMAIL_TEST_SEND_DELAY_MS`。
+
 ## 项目结构
 
 当前主要模板入口如下：
