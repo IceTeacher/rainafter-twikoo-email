@@ -79,7 +79,7 @@ export const commentRichContentCss = `
   }
 
   .comment-rich-content a {
-    color: ${colors.actionPrimary};
+    color: ${colors.actionPrimarySubtle};
     text-decoration: underline;
     word-break: break-word;
   }
