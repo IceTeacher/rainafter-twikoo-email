@@ -1,6 +1,6 @@
-# Rainafter-Twikoo 邮件通知模板
+# Rainafter-Twikoo-Email 邮件通知模板
 
-这是一个基于 React Email 开发的用于 Twikoo 评论系统邮件通知模板项目，提供可本地预览、可导出、可定制主题的邮件模板实现。当前仓库内置 `Rainafter` 和 `Fuwari` 两套主题，并分别包含访客回复通知与管理员评论通知模板。
+一个基于 React Email 的现代化 Twikoo 评论系统邮件通知模板，提供可本地预览、可导出、可通过配置文件轻松修改主题配色的邮件模板实现。当前仓库内置 `Rainafter` 和 `Fuwari` 两套主题，并分别包含访客回复通知与管理员评论通知模板。支持现代化的邮件模板开发方式、本地预览、HTML 导出和邮件兼容性测试。
 
 ## 功能概览
 
@@ -12,6 +12,15 @@
   - `notification-admin.tsx`：站点管理员收到新评论通知
 - 支持通过配置文件修改主题色、Banner 图片和预览数据
 - 支持本地启动预览服务，减少反复发送测试邮件的成本
+
+## 路线图
+
+- [x] 内置 `Rainafter` 和 `Fuwari` 两套邮件模板
+- [x] 抽离配置文件，支持集中修改主题色、Banner 图片和预览数据
+- [x] 完整的邮件测试用例，覆盖模板导出、文件检查和真实 SMTP 发信测试
+- [ ] 更完善的主题设计和更多的配置选项
+- [ ] 可视化主题色编辑器
+- [ ] 可视化邮件制作平台
 
 ## 模板预览
 
@@ -40,6 +49,8 @@ Fuwari 主题参考了知名 Astro 博客主题 [Fuwari](https://github.com/saic
 
 
 ## 开始使用
+
+Twikoo 评论系统实际接入和修改邮件模板的具体步骤，可参考这篇教程：[为你的 Twikoo 评论系统更换一个现代化的邮件通知模板](https://www.rainafter.cn/posts/%E4%B8%BA%E4%BD%A0%E7%9A%84-twikoo-%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%8D%A2%E4%B8%80%E4%B8%AA%E7%8E%B0%E4%BB%A3%E5%8C%96%E7%9A%84%E9%82%AE%E4%BB%B6%E9%80%9A%E7%9F%A5%E6%A8%A1%E6%9D%BF/)。
 
 先安装依赖：
 
@@ -71,6 +82,8 @@ pnpm export
 
 项目提供了基于真实 SMTP 发信的邮件兼容性测试，用于检查导出的 HTML 模板在不同邮箱客户端中的实际显示效果。该测试会真实发送邮件，请使用专门的测试邮箱和 SMTP 凭据。
 
+本项目内置的 `Rainafter` 和 `Fuwari` 两个主题均已通过该测试，保证在 QQ 邮箱、163 邮箱、Outlook、Gmail 等主流邮箱网页端和客户端APP中的兼容性和排版效果。
+
 ### 运行方式
 
 先复制示例配置并填写实际发信信息：
@@ -96,7 +109,7 @@ pnpm test:email
 - `rainafter.notification`：Rainafter 主题的访客回复通知
 - `rainafter.notification-admin`：Rainafter 主题的管理员评论通知
 
-测试数据会在邮件内容中覆盖中文长文本、中英文混排、长链接、代码块、行内代码、远程图片、父评论和回复内容等场景，便于在 QQ 邮箱、Gmail 等真实邮箱客户端中检查排版兼容性。
+测试数据会在邮件内容中覆盖中文长文本、中英文混排、长链接、代码块、行内代码、远程图片、父评论和回复内容等场景，便于在 QQ 邮箱、163 邮箱、Outlook、Gmail 等真实邮箱网页端和客户端APP中检查排版兼容性。
 
 ### 环境变量配置
 
@@ -151,6 +164,8 @@ emails/
 - `config.ts`：主题配置入口
 
 ## 主题修改
+
+主题修改、部署和 Twikoo 侧配置的完整使用方法，可参考教程：[为你的 Twikoo 评论系统更换一个现代化的邮件通知模板](https://www.rainafter.cn/posts/%E4%B8%BA%E4%BD%A0%E7%9A%84-twikoo-%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%8D%A2%E4%B8%80%E4%B8%AA%E7%8E%B0%E4%BB%A3%E5%8C%96%E7%9A%84%E9%82%AE%E4%BB%B6%E9%80%9A%E7%9F%A5%E6%A8%A1%E6%9D%BF/)。
 
 如果你想调整邮件主题，优先从对应主题目录下的 `config.ts` 开始：
 
